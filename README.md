@@ -24,6 +24,7 @@ All components are built using official Terraform AWS modules:
 
 ## Architecture
 
+<img width="1381" height="631" alt="TerraformVPCEKS drawio" src="https://github.com/user-attachments/assets/6c2bbc67-17cc-4b6b-a8e1-25a5e5ef5c40" />
 
 
 
@@ -130,6 +131,8 @@ Always cd into the environment directory before running terraform init.
 
 Never share state files between environments.
 
+Before initializing Terraform, ensure the S3 bucket and DynamoDB table for the remote backend already exist.
+
 Use **IAM** User/roles with least privileges for Terraform execution.
 
 Keep your state backend (S3/DynamoDB) properly secured.
@@ -151,4 +154,5 @@ Automated state management with separate backends
 By following this structure, you can deploy and manage Dev, Staging, and Production Kubernetes clusters with ease, reliability, and scalability.
 
 Author: Osung 
+
 Tools Used: Terraform, **AWS** **CLI**, **AWS** **EKS**, **AWS** **VPC**
