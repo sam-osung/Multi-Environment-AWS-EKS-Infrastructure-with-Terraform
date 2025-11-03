@@ -38,14 +38,14 @@ Each environment replicates this structure independently, ensuring **isolation a
 Follow the official guide:  
 👉 [https://developer.hashicorp.com/terraform/downloads](https://developer.hashicorp.com/terraform/downloads)
 
-Verify installation: terraform -v
+Verify installation: `terraform -v`
 
 
-2️⃣ Configure **AWS** **CLI** Provide:
+2️⃣ Configure **AWS** **CLI** `aws configure` Provide:
 
 Access Key ID
 
-Secret Access Key
+Secret Key
 
 Default region (e.g., us-east-1)
 
