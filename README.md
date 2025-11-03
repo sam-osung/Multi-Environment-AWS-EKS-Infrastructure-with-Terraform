@@ -68,7 +68,8 @@ eks.tf / vpc.tf → Infrastructure logic for **EKS** and **VPC** setup.
 
 Move into the desired environment folder:
 
-cd Environment/Dev terraform init
+`cd Environment/Dev`
+`terraform init`
 
 💡 Each environment must be initialized separately to use its unique backend and state file.
 
@@ -77,12 +78,12 @@ cd Environment/Dev terraform init
 
 Run:
 
-terraform validate
+`terraform validate`
 
 
 3️⃣ Plan the Deployment
 
-terraform plan -var-file=05-Dev.tfvars
+`terraform plan -var-file=05-Dev.tfvars`
 
 This generates an execution plan using that environment’s variable file.
 
@@ -91,7 +92,7 @@ This generates an execution plan using that environment’s variable file.
 
 Deploy the environment:
 
-terraform apply -var-file=05-Dev.tfvars
+`terraform apply -var-file=05-Dev.tfvars`
 
 Confirm with yes when prompted.
 
@@ -107,7 +108,7 @@ Deploy **EKS** control plane and worker nodes.
 
 To remove all infrastructure for a specific environment:
 
-terraform destroy -var-file=05-Dev.tfvars
+`terraform destroy -var-file=05-Dev.tfvars`
 
 
 🔒 Backend Configuration
