@@ -40,11 +40,12 @@ Follow the official guide:
 
 Verify installation: terraform -v
 
+
 2️⃣ Configure **AWS** **CLI** Provide:
 
 Access Key ID
 
-### Secret Access Key
+Secret Access Key
 
 Default region (e.g., us-east-1)
 
@@ -60,6 +61,7 @@ variables.tf → Defines variable inputs.
 
 eks.tf / vpc.tf → Infrastructure logic for **EKS** and **VPC** setup.
 
+
 ### Usage Guide
 
 1️⃣ Initialize the Environment
@@ -70,17 +72,20 @@ cd Environment/Dev terraform init
 
 💡 Each environment must be initialized separately to use its unique backend and state file.
 
+
 2️⃣ Validate the Configuration
 
 Run:
 
 terraform validate
 
+
 3️⃣ Plan the Deployment
 
 terraform plan -var-file=05-Dev.tfvars
 
 This generates an execution plan using that environment’s variable file.
+
 
 4️⃣ Apply the Infrastructure
 
@@ -104,18 +109,10 @@ To remove all infrastructure for a specific environment:
 
 terraform destroy -var-file=05-Dev.tfvars
 
+
 🔒 Backend Configuration
 
-Each environment has its own remote backend configuration in backend.tf. Example for dev:
-
-terraform {
-    backend *s3* {
-    bucket = my-terraform-project-oct-2025
-    key    = dev/terraform.tfstate
-    region = us-east-1
-    encrypt = true
-    }
-}
+Each environment has its own remote backend configuration in backend.tf
 
 This ensures:
 
@@ -124,6 +121,7 @@ Isolated state management (Dev, Staging, Production)
 Safe parallel operations without interference
 
 Versioned and encrypted state files
+
 
 🧠 Best Practices
 
@@ -140,6 +138,7 @@ Keep your state backend (S3/DynamoDB) properly secured.
 Use terraform fmt and terraform validate before commits.
 
 Prefer remote backends over local state storage for safety.
+
 
 ✅ Conclusion
 
